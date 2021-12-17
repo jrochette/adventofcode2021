@@ -1023,3 +1023,17 @@ for position in available_positions:
 fuel_usages = list(fuel_usage_totals.values())
 fuel_usages.sort()
 print(f"Minimum fuel usage: {fuel_usages[0]}")
+
+# Smart way for part 1 and 2
+median = sorted_crab_positions[int(len(sorted_crab_positions) / 2)]
+mean_position = round(sum(sorted_crab_positions) / len(sorted_crab_positions))
+
+print(sum(map(lambda x: abs(x - median), sorted_crab_positions)))
+print(
+    sum(
+        map(
+            lambda x: (abs(x - mean_position) * (abs(x - mean_position) + 1) / 2),
+            sorted_crab_positions,
+        )
+    )
+)
