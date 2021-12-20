@@ -71,7 +71,7 @@ def has_small_cave_visited_twice(path: list) -> bool:
 def find_path(source: str, destination: str, path: list, visited_twice: bool):
     if (
         # condition for part 2
-        (len(path) > 0 and source == "start")
+        (path and source == "start")
         or visited_twice
         # end condition for part 2
         and source.lower() in path
