@@ -1,5 +1,7 @@
 TEST="hello world"
 
+TEST2="hello world 2"
+
 depths = [
     173,
     178,
@@ -2002,16 +2004,18 @@ depths = [
     9298,
     9299,
 ]
-increases_counter = 0
-print(f"Depths size: {len(depths)}")
 
-for i, depth in enumerate(depths):
-    if i == len(depths) - 3:
-        break
+def check_depth(): 
+    increases_counter = 0
+    print(f"Depths size: {len(depths)}")
 
-    current_window = depth + depths[i + 1] + depths[i + 2]
-    next_window = depths[i + 1] + depths[i + 2] + depths[i + 3]
-    if next_window > current_window:
-        increases_counter += 1
+    for i, depth in enumerate(depths):
+        if i == len(depths) - 3:
+            break
 
-print(f"Depth increase: {increases_counter}")
+        current_window = depth + depths[i + 1] + depths[i + 2]
+        next_window = depths[i + 1] + depths[i + 2] + depths[i + 3]
+        if next_window > current_window:
+            increases_counter += 1
+
+    print(f"Depth increase: {increases_counter}")
